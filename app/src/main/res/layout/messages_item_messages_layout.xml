@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.CalSocial.widget.SwipeToRevealHidden xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipeToReveal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/messageItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/unreadMessage"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/round_red_dot" />
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/unreadMessage"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/girl1" />
+
+        <LinearLayout
+            android:id="@+id/nameExcerptLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="8dp"
+            android:layout_toRightOf="@id/profileImage"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/hk_grotesk_regular"
+                android:letterSpacing="0.01"
+                android:lineSpacingExtra="3sp"
+                android:textColor="@color/CalSocialBlue"
+                android:textSize="16sp"
+                tools:text="Diana Johnson" />
+
+            <TextView
+                android:id="@+id/excerpt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/avenir_book"
+                android:letterSpacing="0.01"
+                android:lineSpacingExtra="5sp"
+                android:lines="2"
+                android:textColor="@color/greyishBrownTwo"
+                android:textSize="14sp"
+                tools:text="I can’t wait!!! She might go but I’m…" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <TextView
+                android:id="@+id/timeOfMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginRight="@dimen/dp_20"
+                android:fontFamily="@font/hk_grotesk_light"
+                android:letterSpacing="0.01"
+                android:lineSpacingExtra="2sp"
+                android:textColor="@color/greyishBrownTwo"
+                android:textSize="12sp"
+                tools:text="2:22PM" />
+
+            <ImageView
+                android:id="@+id/rightArrow"
+                android:layout_width="8dp"
+                android:layout_height="13dp"
+                android:layout_gravity="end"
+                android:contentDescription="@string/app_name"
+                android:lineSpacingExtra="5sp"
+                android:src="@drawable/right_arrow" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@id/nameExcerptLL"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/lightGray" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/deleteMessage"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@color/red"
+        android:padding="@dimen/dp_10"
+        android:src="@drawable/remove_x_white"
+        android:translationX="100dp" />
+
+</com.CalSocial.widget.SwipeToRevealHidden>

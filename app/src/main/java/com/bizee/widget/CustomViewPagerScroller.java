@@ -1,0 +1,37 @@
+package com.CalSocial.widget;
+
+import android.content.Context;
+import android.util.Log;
+import android.view.animation.Interpolator;
+import android.widget.Scroller;
+
+public class CustomViewPagerScroller extends Scroller {
+
+    private double mScrollFactor = 1;
+
+    public CustomViewPagerScroller(Context context) {
+        super(context);
+    }
+
+    public CustomViewPagerScroller(Context context, Interpolator interpolator) {
+        super(context, interpolator);
+    }
+
+    public CustomViewPagerScroller(Context context, Interpolator interpolator, boolean flywheel) {
+        super(context, interpolator, flywheel);
+    }
+
+    /**
+     * Set the factor by which the duration will change
+     */
+    public void setScrollDurationFactor(double scrollFactor) {
+        mScrollFactor = scrollFactor;
+    }
+
+    @Override
+    public void startScroll(int startX, int startY, int dx, int dy, int duration) {
+        super.startScroll(startX, startY, dx, dy, (int) (duration * mScrollFactor));
+
+        Log.e("startX", startX + "");
+    }
+}

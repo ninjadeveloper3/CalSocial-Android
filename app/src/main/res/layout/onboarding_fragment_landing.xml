@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/landingPageSV"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteX="18dp"
+    tools:layout_editor_absoluteY="3dp">
+
+    <FrameLayout
+        android:id="@+id/viewPagerLogoFL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/cl_root_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical"
+            tools:visibility="visible">
+
+            <com.CalSocial.widget.CustomViewPager
+                android:id="@+id/landingViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="0dp"
+                android:layout_marginTop="-50dp"
+                android:animateLayoutChanges="true"
+                android:padding="0dp" />
+
+            <LinearLayout
+                android:id="@+id/layoutDots"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal" />
+
+            <com.CalSocial.widget.CalSocialButton
+                android:id="@+id/signUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:animateLayoutChanges="true"
+                app:button_text="@string/sign_up" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            android:fontFamily="@font/avenir_black"
+            android:text="@string/login"
+            android:textColor="@color/dirtyBlue"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <include
+            android:id="@+id/logo"
+            layout="@layout/onboarding_header_logo_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:visibility="visible" />
+
+    </FrameLayout>
+</ScrollView>

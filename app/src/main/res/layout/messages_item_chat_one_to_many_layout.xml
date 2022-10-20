@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:layout_editor_absoluteX="18dp"
+    tools:layout_editor_absoluteY="3dp">
+
+    <LinearLayout
+        android:id="@+id/oneToManyLL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingStart="12dp"
+        android:paddingTop="14dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="14dp">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dateTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/line_spacer"
+                android:drawableRight="@drawable/line_spacer"
+                android:drawablePadding="@dimen/dp_10"
+                android:fontFamily="@font/avenir_medium"
+                android:letterSpacing="0.01"
+                android:lineSpacingExtra="5sp"
+                android:text="Monday, June 24th"
+                android:textColor="@color/darkGray"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/receivedProfileImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/corner_border_rect_gray_events_home_background"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/CalSocial_suggests"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/receiverName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_25"
+                    android:fontFamily="@font/avenir_medium"
+                    android:letterSpacing="0.01"
+                    android:lineSpacingExtra="5sp"
+                    android:text="Sarah Jenkins"
+                    android:textColor="@color/darkGray"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:id="@+id/receivedMessageLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/rounded_received_card_blue"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp_20"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/receivedMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenir_medium"
+                        android:letterSpacing="0.01"
+                        android:lineSpacingExtra="5sp"
+                        android:lines="1"
+                        android:maxWidth="238dp"
+                        android:maxLines="1"
+                        android:text="I can’t wait!!!  She might go but I’m…"
+                        android:textColor="@color/darkGray"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/receivedTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:fontFamily="@font/avenir_medium"
+                        android:letterSpacing="0.01"
+                        android:lineSpacingExtra="2sp"
+                        android:text="2:22PM"
+                        android:textColor="@color/darkGray"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sentMessageLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="-50dp"
+            android:gravity="end"
+            android:orientation="vertical"
+            android:paddingRight="@dimen/dp_40">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:background="@drawable/rounded_sent_card_gray"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_20">
+
+                <TextView
+                    android:id="@+id/sentMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.01"
+                    android:lineSpacingExtra="5sp"
+                    android:lines="1"
+                    android:maxWidth="238dp"
+                    android:maxLines="1"
+                    android:text="I can’t wait!!! She might go but I’m…"
+                    android:textColor="@color/darkGray"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/sentTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:letterSpacing="0.01"
+                    android:lineSpacingExtra="2sp"
+                    android:text="2:24PM"
+                    android:textColor="@color/darkGray"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dateTV1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/line_spacer"
+                android:drawableRight="@drawable/line_spacer"
+                android:drawablePadding="@dimen/dp_10"
+                android:fontFamily="@font/avenir_medium"
+                android:letterSpacing="0.01"
+                android:lineSpacingExtra="5sp"
+                android:text="Monday, June 25th"
+                android:textColor="@color/darkGray"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/receivedProfileImage1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/corner_border_rect_gray_events_home_background"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/CalSocial_score"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/receiverName1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_25"
+                    android:fontFamily="@font/avenir_medium"
+                    android:letterSpacing="0.01"
+                    android:lineSpacingExtra="5sp"
+                    android:text="Jacob Jones"
+                    android:textColor="@color/darkGray"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:id="@+id/receivedMessageLL1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/rounded_received_card_blue"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dp_20"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/receivedMessage1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/avenir_medium"
+                        android:letterSpacing="0.01"
+                        android:lineSpacingExtra="5sp"
+                        android:lines="1"
+                        android:maxWidth="238dp"
+                        android:maxLines="1"
+                        android:text="I can’t wait!!!  She might go but I’m…"
+                        android:textColor="@color/darkGray"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/receivedTime1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:fontFamily="@font/avenir_medium"
+                        android:letterSpacing="0.01"
+                        android:lineSpacingExtra="2sp"
+                        android:text="2:22PM"
+                        android:textColor="@color/darkGray"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/commentSendLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_10"
+            android:gravity="center|bottom"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/dp_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/commentsExpandableLayout">
+
+            <ImageView
+                android:id="@+id/cameraSelect"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="0.1"
+                android:background="@color/transparent"
+                android:src="@drawable/camera" />
+
+            <EditText
+                android:id="@+id/message"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_weight="0.8"
+                android:background="@drawable/edittext_rounded_corner_border_message"
+                android:hint="@string/message_hint"
+                android:paddingLeft="@dimen/dp_20"
+                android:textColor="@color/messageHint"
+                android:textColorHint="@color/messageHint"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/sendComment"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="0.1"
+                android:background="@drawable/round_gray_dot"
+                android:padding="1dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_arrow_up_grey600_48dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

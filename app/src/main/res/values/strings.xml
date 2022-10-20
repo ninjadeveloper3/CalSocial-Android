@@ -1,0 +1,341 @@
+<!--
+  ~ Copyright (C) 2017 MINDORKS NEXTGEN PRIVATE LIMITED
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://mindorks.com/license/apache-v2
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+
+<resources>
+    <string name="app_name">CalSocial</string>
+    <string name="contact_service_description">This service has been initiated by CalSocial app in order to perform contact syncing.</string>
+    <string name="calender_service_description">This service has been initiated by CalSocial app in order to perform calender syncing.</string>
+
+    <!--Toolbar menus-->
+    <string name="clear">Clear</string>
+    <string name="cut">Cut</string>
+    <string name="copy">Copy</string>
+    <string name="paste">Paste</string>
+    <string name="delete">Delete</string>
+    <string name="share">Share</string>
+
+    <!--Drawer-->
+    <string name="open_drawer">Drawer Open</string>
+    <string name="close_drawer">Drawer Close</string>
+
+    <!--Drawer Menus-->
+    <string name="about">About</string>
+    <string name="logout">Logout</string>
+    <string name="feed">My Feed</string>
+
+    <string name="add_to_favorites">Add to your favorites</string>
+    <string name="change_hive_status">Change hive status</string>
+    <string name="remove_from_hive">Remove from hive</string>
+    <string name="block">Block</string>
+    <string name="cancel">Cancel</string>
+    <string name="event_invite_sent">Event invite sent!</string>
+    <string name="expect_to_receive">Expect to receive a notification when guests respond</string>
+
+
+    <!--App Message-->
+    <string name="api_retry_error">Please retry!</string>
+    <string name="api_default_error">Something wrong happened!</string>
+    <string name="some_error">Some Error Occurred!</string>
+    <string name="connection_error">Internet connection lost!</string>
+
+    <!--Login-->
+    <string name="login_dummy">Login Dummy</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+
+    <!--Login Validation-->
+    <string name="empty_email">Please provide a valid email.</string>
+    <string name="invalid_email">Please provide a valid email.</string>
+    <string name="empty_password">Please provide a password.</string>
+
+    <!--Signup Validation-->
+    <string name="empty_first_name">Please provide a first name.</string>
+    <string name="empty_last_name">Please provide a last name.</string>
+    <string name="empty_phone">Please provide a phone number.</string>
+
+    <!--Phone Code Validation-->
+    <string name="empty_phone_digit">Please provide the code that has been sent to you.</string>
+
+    <!--Additional Info Validation-->
+    <string name="empty_location">Please provide a location.</string>
+    <string name="empty_bio">Please provide a bio.</string>
+
+
+    <!--about fragment-->
+    <string name="project_info">This sample app implements MVP architecture using Dagger2, GreenDao, RxJava, FastAndroidNetworking and PlaceholderView</string>
+    <string name="link_mvp_blog">1. https://blog.mindorks.com</string>
+    <string name="link_mvp_repo">2. https://github.com/MindorksOpenSource/android-mvp-architecture</string>
+    <string name="link_mindorks_blog">3. https://blog.mindorks.com</string>
+    <string name="link_mindorks_repo">4. https://github.com/MindorksOpenSource</string>
+    <string name="version">"version"</string>
+
+    <!--rating dialog-->
+    <string name="rate_us">Rate Us</string>
+    <string name="rating_message">Please let us know, how can we improve ourselves?</string>
+    <string name="rating_play_store_redirect_message_line_1">Awesome! Thank you for the 5 stars.</string>
+    <string name="rating_play_store_redirect_message_line_2">Please help others, in knowing some good things about this app.</string>
+    <string name="rating_play_store_text">Rate us on Play Store</string>
+    <string name="rating_not_provided_error">Please provide us stars.</string>
+    <string name="rating_thanks">Thank you!</string>
+
+    <!--play store-->
+    <string name="app_google_play_store_link">"https://play.google.com/store/apps/details?id="</string>
+    <string name="app_market_link">"market://details?id="</string>
+
+    <!--button-->
+    <string name="later">Later</string>
+    <string name="submit">Submit</string>
+
+
+    <!--feed-->
+    <string name="title">My Feed</string>
+    <string name="open_source">Open Source</string>
+    <string name="blog">Blog</string>
+
+    <!--empty state-->
+    <string name="empty_screen">We do not have anything\nhere right now.</string>
+    <string name="please_retry">Please Retry</string>
+    <string name="retry">Retry</string>
+
+    <!--onboarding screens-->
+    <!--button-->
+    <string name="sign_up">Sign Up</string>
+    <string name="save_continue">Save &amp; Continue</string>
+    <string name="create_event">Create Event</string>
+    <string name="send_requests">Send Requests</string>
+    <string name="sync_contacts">Sync Contacts</string>
+    <string name="agree_continue">Agree &amp; Continue</string>
+    <string name="continue_button">Continue</string>
+    <string name="in_hive">In Hive</string>
+    <string name="out_of_hive">Out of Hive</string>
+    <string name="request_sent">Request Sent!</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
+    <string name="add_member">Add Member</string>
+    <string name="add_to_hive">Add To Hive</string>
+    <string name="available">Available!</string>
+    <string name="confirm_send">Confirm &amp; Send</string>
+    <string name="okay">Okay</string>
+    <string name="unblock">Unblock</string>
+
+    <!--text view-->
+    <string name="sync_calendars">Adding your calendar allows CalSocial to find common availability between you and your hive</string>
+    <string name="ready_to_get_CalSocial">Ready to get CalSocial? Get started by creating an event!</string>
+    <string name="contacts_found_pre">Inviting your friends into your hive allows CalSocial to use its Syncing Magic</string>
+    <string name="contacts_found_post">of your friends on CalSocial add them to your hive</string>
+    <string name="contact_sync_perm">To create events with your friends, CalSocial will need access to your contacts</string>
+    <string name="login_text">I already use CalSocial</string>
+    <string name="terms_link">https://play.google.com/store/apps/details</string>
+    <string name="privacy_link">https://play.google.com/store/apps/details</string>
+    <string name="agreement_pre">By continuing you agree to CalSocial\'s</string>
+    <string name="agreement_terms">Terms of Use</string>
+    <string name="amp">&amp;</string>
+    <string name="agreement_privacy">Privacy Policy</string>
+    <string name="additional_info">Add more information to your CalSocial profile</string>
+    <string name="skip_now">Skip for now</string>
+    <string name="tag_line">Let\'s get you set up</string>
+    <string name="verification">Please enter the verification code sent to your phone</string>
+    <string name="didnt_receive_code">Didn\'t receive a code?</string>
+    <string name="resend_code">Resend Code</string>
+    <string name="go_back">Go Back</string>
+    <string name="login_CalSocial">Login to CalSocial</string>
+    <string name="empty_favorites">You have not selected any contacts\/swarms as favorites</string>
+    <string name="welcome_CalSocial">Welcome to CalSocial</string>
+    <string name="we_know_busy">Finding time with friends &amp; family made super easy and fun!</string>
+    <string name="CalSocial_score_title">It\'s all about the CalSocial Score</string>
+    <string name="CalSocial_score_text">CalSocial calculates scores, letting you know when your friends are likely to say \"Yes\"!</string>
+    <string name="CalSocial_suggests_title">Find common availability...</string>
+    <string name="CalSocial_suggests_text">...without sharing calendars.</string>
+    <string name="build_your_hive_title">Now it\'s Time to Get CalSocial!</string>
+    <string name="build_your_hive_text">Add friends to your hive to experience scheduling like never before.</string>
+    <string name="likely_yes">Likely \"Yes\"</string>
+    <string name="likely_no">Likely \"No\"</string>
+    <string name="ready_create_event">Ready to get CalSocial? Get started by creating an event!</string>
+    <string name="add_google_calender">Add Google Calender</string>
+    <string name="current_date">Thursday, July 11, 2019</string>
+    <string name="bio_title">Bio</string>
+    <string name="bio_description_placeholder">This is where the swarm gets to write whatever they want about themselves its purpose, goals, whatever to X characters.</string>
+    <string name="bucket_list_title">Bucket List</string>
+    <string name="about_us_title">About Us</string>
+    <string name="members">Members</string>
+    <string name="delete_swarm">Delete Swarm</string>
+    <string name="host_notes_title">Host Notes</string>
+    <string name="invited">Invited</string>
+    <string name="going">Going</string>
+    <string name="maybe">Maybe</string>
+    <string name="not_going">Not Going</string>
+    <string name="event_title">Event Title</string>
+    <string name="event_title_hint">Autofills Host + Guest + Guest ...</string>
+    <string name="date">Date</string>
+    <string name="date_hint">The date to host the event</string>
+    <string name="location_where">Location</string>
+    <string name="location_where_hint">Where to meet</string>
+    <string name="notes">Notes</string>
+    <string name="notes_hint">Any additional comments...</string>
+    <string name="comments_title">Comments</string>
+    <string name="CalSocial">CalSocial</string>
+    <string name="score">score</string>
+    <string name="similar_CalSocial_suggestions">Similar CalSocial Suggestions</string>
+    <string name="contacts_not_synced">You have not given CalSocial access to sync your phone contacts.</string>
+    <string name="do_not_belong_to_any_swarm">You do not belong to any swarm groups yet. You can create one by tapping the button below</string>
+    <string name="hive_empty">Your Hive is empty you can add to it by tapping the \"+\" icon at the top.</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="agree">Agree</string>
+    <string name="disagree">Disagree</string>
+
+    <!--edit text-->
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="phone">Phone Number</string>
+    <string name="location">Location</string>
+    <string name="location_hint">City, State</string>
+    <string name="bio">Bio</string>
+    <string name="bio_hint">A little bit about yourself...</string>
+    <string name="name">Name</string>
+    <string name="name_hint">Your display name</string>
+    <string name="bucket_one">#1 Bucket List Item</string>
+    <string name="bucket_one_hint">Bike across the USA</string>
+
+    <string name="bucket_two">#2 Bucket List Item</string>
+    <string name="bucket_two_hint">Dive in the Great Barrier Reef</string>
+
+    <string name="bucket_three">#3 Bucket List Item</string>
+    <string name="bucket_three_hint">Go to the moon</string>
+
+    <string name="bucket_four">#4 Bucket List Item</string>
+    <string name="bucket_four_hint">Fly a plane</string>
+
+    <string name="bucket_five">#5 Bucket List Item</string>
+    <string name="bucket_five_hint">Get into a fight</string>
+
+    <string name="swarm">Swarm Title</string>
+    <string name="swarm_hint">The Best Friends</string>
+    <string name="swarm_create_title_hint">Name Your Group</string>
+
+    <string name="about_us">About Us</string>
+    <string name="about_us_hint">Since...</string>
+    <string name="about_us_swarm_create_hint">A brief description of your group...</string>
+
+    <string name="search_for_someone">Search for someone</string>
+
+    <string name="message"></string>
+    <string name="message_hint">Type Message</string>
+
+    <string name="edit">Edit</string>
+    <string name="save">Save</string>
+    <string name="add">Add</string>
+
+    <string name="duration">Duration</string>
+    <string name="add_guest">Add Guest</string>
+    <string name="plus">+</string>
+    <string name="picture_comment">This is a picture comment.</string>
+
+    <string name="home">Home</string>
+    <string name="contacts">Contacts</string>
+    <string name="messages">Messages</string>
+    <string name="notifications">Notifications</string>
+
+    <string name="start">Start</string>
+    <string name="end">End</string>
+    <string name="create_new_swarm">Create New Swarm</string>
+
+    <string name="sync_calendar">Sync Calendar</string>
+    <string name="CalSocial_suggestion_privacy">CalSocial Suggestion Privacy</string>
+    <string name="profile_visibility">Profile Visibility</string>
+    <string name="tour">Tour</string>
+    <string name="find_friends">Find Friends</string>
+    <string name="help_contact_us">Help/Contact us</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_of_use">Terms of Use</string>
+    <string name="your_calendars">Your Calendars</string>
+    <string name="remove">Remove</string>
+    <string name="none_added">None added yet</string>
+    <string name="hive_connections">Hive Connections</string>
+    <string name="blocked_users">Blocked Users</string>
+    <string name="report_a_problem">Report a problem</string>
+    <string name="open_source_library">Open source library</string>
+
+    <string name="allow_CalSocial_to_suggest">Allow CalSocial to Suggest</string>
+    <string name="CalSocial_will_suggest">CalSocial will suggest only within your social hours.</string>
+    <string name="hosts_may_send">*Hosts may send invitations outside of your social hours.</string>
+    <string name="your_social_hours">Your Social Hours</string>
+    <string name="account_is_private">Account is private</string>
+    <string name="private_accounts_searches">Private accounts do not appear in searches</string>
+
+    <string name="can_view_other_members_in_my_hive">Can view other members in my hive</string>
+    <string name="can_invite_me_to_an_event">Can invite me to an event</string>
+    <string name="can_view_details_my_profile">Can view details of my profile</string>
+    <string name="can_view_other_members_hive">Can view other members of my hive</string>
+
+    <string name="pause_all_notifications">Pause all notifications</string>
+    <string name="direct_messages">Direct messages</string>
+    <string name="hive_notifcations">Hive notifications</string>
+    <string name="event_notifications">Event Notifications</string>
+
+
+    <string name="hive">Hive</string>
+    <string name="swarms">Swarms</string>
+    <string name="phone_contacts">Phone Contacts</string>
+    <string name="CalSocial_network">CalSocial Network</string>
+
+    <string name="done">Done</string>
+    <string name="cancel_home">Cancel</string>
+    <string name="edit_home">Edit</string>
+    <string name="create_swarm">Create</string>
+    <string name="leave_swarm">Leave</string>
+
+    <string name="user_account_activation_successful_title">Account Activation Successful</string>
+    <string name="user_account_activation_successful_message">Your account has been successfully activated.</string>
+
+    <string name="user_login_verification_successful_title">Account Verification Successful</string>
+    <string name="user_login_verification_successful_message">Your account has been successfully verified.</string>
+
+    <string name="user_already_active_title">Account Already Activated</string>
+    <string name="user_already_active_message">Your account has been already been activated. Please proceed to login.</string>
+
+    <string name="invalid_code_title">Invalid Code Provided</string>
+    <string name="invalid_code_message">You have provided an invalid code. Please enter the correct code, or request for a new code by clicking on the given resend code link.</string>
+
+    <string name="user_not_activated_title">Account Not Activated</string>
+    <string name="user_not_activated_message">Your user has not yet been activated. Please get your account activated via the signup process.</string>
+
+    <string name="error_title">Oops!</string>
+    <string name="error_message">Unfortunately, an error has occurred, please try again.</string>
+
+    <string name="phone_already_registered_title">Phone Number Already Registered</string>
+    <string name="phone_already_registered_message">Unfortunately, the phone number that you have provided has already been registered. Please either give a new phone number, or login using the number that you have provided.</string>
+
+    <string name="additional_info_updated_title">Details Updated Successfully</string>
+    <string name="additional_info_updated_message">Your additional details have been updated successfully.</string>
+
+    <string name="invalid_us_can_number_title">Incorrect Number Provided</string>
+    <string name="invalid_us_can_number_message">Please provide a valid US/Canadian phone number.</string>
+
+    <string name="user_not_registered_title">User Not Registered</string>
+    <string name="user_not_registered_message">Unfortunately we could not find a user registered against the phone number that you have provided.</string>
+
+    <string name="contacts_sync_confirm_title">Important Information</string>
+    <string name="contacts_sync_confirm_message">CalSocial will be uploading your contacts to its servers in order to be able to run its algorithms to identify which of your contacts are in the CalSocial Network so as to help improve your user experience in using CalSocial. Please confirm if you agree or disagree with this. In the case of a disagreement, CalSocial will not sync your contacts, and this may cause a reduced user experience.</string>
+
+    <string name="contacts_access_not_allowed_title">Important Information</string>
+    <string name="contacts_access_not_allowed_message">Since you did not allow CalSocial access to your contacts, CalSocial will not be syncing your contacts. If at a later date you want to enable syncing please do so from the Settings in your phone\'s operating system, and CalSocial will again ask you for permissions.</string>
+
+    <string name="thirty_min">30min</string>
+    <string name="all_day">All Day</string>
+
+</resources>

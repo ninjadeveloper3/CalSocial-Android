@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2017 MINDORKS NEXTGEN PRIVATE LIMITED
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://mindorks.com/license/apache-v2
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/contactProfile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLine1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="0dp" />
+
+        <LinearLayout
+            android:id="@+id/calHeaderCalSocial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/favoritesRV">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@color/lightGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/previousMonth"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_25"
+                    android:background="@drawable/calender_sync_selector"
+                    android:src="@drawable/left_arrow" />
+
+                <TextView
+                    android:id="@+id/currentDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/calender_sync_selector"
+                    android:gravity="center"
+                    android:text="@string/current_date"
+                    android:textColor="@color/dirtyBlue"
+                    android:fontFamily="@font/hk_grotesk_medium"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:id="@+id/nextMonth"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_25"
+                    android:background="@drawable/calender_sync_selector"
+                    android:src="@drawable/right_arrow" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@color/lightGray" />
+        </LinearLayout>
+
+
+        <net.cachapa.expandablelayout.ExpandableLayout
+            android:id="@+id/expandableLayoutCal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_duration="1000"
+            app:el_expanded="false"
+            app:el_parallax="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/calHeaderCalSocial">
+
+            <com.applandeo.materialcalendarview.CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                app:eventsEnabled="true"
+                app:headerColor="@color/white"
+                app:headerLabelColor="@color/dirtyBlue"
+                app:highlightedDaysLabelsColor="@color/white"
+                app:selectionColor="@color/selectedDayColor"
+                app:todayLabelColor="@color/currentDayColor"
+                app:type="one_day_picker" />
+
+        </net.cachapa.expandablelayout.ExpandableLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/lightGray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/expandableLayoutCal" />
+
+        <LinearLayout
+            android:id="@+id/datesLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider">
+
+
+            <LinearLayout
+                android:id="@+id/startTimeLL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:background="@drawable/calender_sync_selector"
+                        android:gravity="center"
+                        android:text="@string/start"
+                        android:textColor="@color/dirtyBlue"
+                        android:fontFamily="@font/hk_grotesk_medium"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/startTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:background="@drawable/calender_sync_selector"
+                        android:gravity="center"
+                        android:fontFamily="@font/avenir_medium"
+                        android:text="6:00PM"
+                        android:textColor="@color/gray"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/expandableLayoutStartTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:el_duration="1000"
+                    app:el_expanded="false"
+                    app:el_parallax="0.5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calHeaderCalSocial">
+
+                    <com.github.florent37.singledateandtimepicker.SingleDateAndTimePicker
+                        android:id="@+id/startTimePicker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:picker_curved="false"
+                        app:picker_cyclic="true"
+                        app:picker_displayDays="false"
+                        app:picker_displayHours="true"
+                        app:picker_displayMinutes="true"
+                        app:picker_displayMonth="false"
+                        app:picker_displayYears="false"
+                        app:picker_visibleItemCount="3" />
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="@dimen/dp_5"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/lightGray" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/endTimeLL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:background="@drawable/calender_sync_selector"
+                        android:gravity="center"
+                        android:text="@string/end"
+                        android:fontFamily="@font/hk_grotesk_medium"
+                        android:textColor="@color/dirtyBlue"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/endTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:background="@drawable/calender_sync_selector"
+                        android:gravity="center"
+                        android:text="8:30PM"
+                        android:fontFamily="@font/avenir_medium"
+                        android:textColor="@color/gray"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/expandableLayoutEndTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:el_duration="1000"
+                    app:el_expanded="false"
+                    app:el_parallax="0.5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calHeaderCalSocial">
+
+                    <com.github.florent37.singledateandtimepicker.SingleDateAndTimePicker
+                        android:id="@+id/endTimePicker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:picker_curved="false"
+                        app:picker_cyclic="true"
+                        app:picker_displayDays="false"
+                        app:picker_displayHours="true"
+                        app:picker_displayMinutes="true"
+                        app:picker_displayMonth="false"
+                        app:picker_displayYears="false"
+                        app:picker_visibleItemCount="3" />
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@color/lightGray" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <com.CalSocial.widget.CalSocialButton
+            android:id="@+id/agreeContinue"
+            android:layout_width="200dp"
+            android:layout_height="51dp"
+            app:button_text="@string/continue_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/dp_30"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/datesLL" />
+
+
+        <include
+            layout="@layout/spacer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/agreeContinue" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

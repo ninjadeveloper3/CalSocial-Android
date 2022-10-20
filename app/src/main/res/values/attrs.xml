@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CalSocialEditText">
+        <attr name="type_label" format="enum">
+            <enum name="first_name" value="0" />
+            <enum name="last_name" value="1" />
+            <enum name="phone" value="2" />
+            <enum name="location" value="3" />
+            <enum name="bio" value="4" />
+            <enum name="other" value="5" />
+            <enum name="name" value="6" />
+            <enum name="bucket_one" value="7" />
+            <enum name="bucket_two" value="8" />
+            <enum name="bucket_three" value="9" />
+            <enum name="bucket_four" value="10" />
+            <enum name="bucket_five" value="11" />
+            <enum name="swarm" value="12" />
+            <enum name="about_us" value="13" />
+            <enum name="message" value="14" />
+            <enum name="event_title" value="15" />
+            <enum name="date" value="16" />
+            <enum name="location_where" value="17" />
+            <enum name="notes" value="18" />
+            <enum name="swarm_create_title" value="19" />
+            <enum name="about_us_swarm_create" value="20" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="CalSocialTextView">
+        <attr name="text" format="string" />
+        <attr name="text_color" format="color" />
+        <attr name="text_size" format="integer" />
+        <attr name="font_family" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="CalSocialButton">
+        <attr name="button_text" format="string" />
+        <attr name="button_type" format="enum">
+            <enum name="yellow_selector" value="0" />
+            <enum name="dark_green_selector" value="1" />
+            <enum name="light_green_selector" value="2" />
+            <enum name="lighter_green_selector" value="3" />
+            <enum name="red_selector" value="4" />
+            <enum name="dark_brown_selector" value="5" />
+        </attr>
+        <attr name="button_text_size" format="integer" />
+    </declare-styleable>
+
+</resources>

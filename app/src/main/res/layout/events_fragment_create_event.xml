@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2017 MINDORKS NEXTGEN PRIVATE LIMITED
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://mindorks.com/license/apache-v2
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/createEvent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="50dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/tagGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_begin="0dp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/attendeesRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tagGuideLine" />
+
+        <com.CalSocial.widget.CalSocialEditText
+            android:id="@+id/eventTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/attendeesRV"
+            app:type_label="event_title" />
+
+        <TextView
+            android:id="@+id/duratonLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_25"
+            android:text="@string/duration"
+            android:textColor="@color/editTextBorder"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventTitle" />
+
+        <com.warkiz.widget.IndicatorSeekBar
+            android:id="@+id/eventDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_10"
+            app:isb_indicator_color="@color/gray"
+            app:isb_indicator_text_color="@color/colorAccent"
+            app:isb_indicator_text_size="18sp"
+            app:isb_max="13"
+            app:isb_min="1"
+            app:isb_only_thumb_draggable="true"
+            app:isb_progress="1.0"
+            app:isb_seek_smoothly="true"
+            app:isb_show_indicator="rounded_rectangle"
+            app:isb_show_tick_marks_type="none"
+            app:isb_show_tick_texts="false"
+            app:isb_thumb_color="@color/lightGray"
+            app:isb_thumb_size="20dp"
+            app:isb_tick_marks_drawable="@drawable/transparent_spacer"
+            app:isb_tick_marks_size="13dp"
+            app:isb_tick_texts_color="@color/dirtyBlue"
+            app:isb_tick_texts_size="15sp"
+            app:isb_ticks_count="1"
+            app:isb_track_background_color="@color/lightGray"
+            app:isb_track_background_size="8dp"
+            app:isb_track_progress_color="@color/dirtyBlue"
+            app:isb_track_progress_size="8dp"
+            app:isb_track_rounded_corners="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/duratonLabel" />
+
+        <RelativeLayout
+            android:id="@+id/durationText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventDuration">
+
+            <TextView
+                android:id="@+id/thirtyMinTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:fontFamily="@font/avenir_heavy"
+                android:text="@string/thirty_min"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/allDayTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="@dimen/dp_15"
+                android:fontFamily="@font/avenir_heavy"
+                android:text="@string/all_day"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/eventDate"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_20"
+            android:background="@drawable/edittext_rounded_corner_border_date"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:text="Saturday, May 12th 7:00PM - 11:30PM"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/durationText" />
+
+        <LinearLayout
+            android:id="@+id/CalSocialScoreLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginTop="@dimen/dp_5"
+            android:gravity="end"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventDate">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/CalSocialScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/avenir_heavy"
+                android:text="CalSocial Score 95%"
+                android:textAlignment="textEnd"
+                android:textColor="@color/CalSocialYellow"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/eventDate" />
+        </LinearLayout>
+
+        <com.CalSocial.widget.CalSocialEditText
+            android:id="@+id/eventLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/CalSocialScoreLL"
+            app:type_label="location_where" />
+
+
+        <com.CalSocial.widget.CalSocialEditText
+            android:id="@+id/eventNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventLocation"
+            app:type_label="notes" />
+
+
+        <LinearLayout
+            android:id="@+id/changeCoverImageLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventNotes">
+
+            <ImageView
+                android:id="@+id/changeCoverImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@color/transparent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/camera" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/colorCoverOneSelected"
+                android:layout_width="51dp"
+                android:layout_height="33dp"
+                android:layout_marginRight="@dimen/dp_10"
+                app:cardBackgroundColor="@color/shadowColor">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/change_cover_one"
+                    android:padding="@dimen/dp_20"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/check_mark" />
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/colorCoverOne"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/change_cover_one"
+                android:padding="@dimen/dp_10"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_check_white_48dp"
+                android:visibility="gone" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/colorCoverTwoSelected"
+                android:layout_width="51dp"
+                android:layout_height="33dp"
+                android:layout_marginRight="@dimen/dp_10"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/shadowColor">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/change_cover_two"
+                    android:padding="@dimen/dp_10"
+                    android:scaleType="centerCrop" />
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/colorCoverTwo"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@drawable/change_cover_two"
+                android:padding="@dimen/dp_10"
+                android:scaleType="centerCrop" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/colorCoverThreeSelected"
+                android:layout_width="51dp"
+                android:layout_height="33dp"
+                android:layout_marginRight="@dimen/dp_10"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/shadowColor">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/change_cover_three"
+                    android:padding="@dimen/dp_10"
+                    android:scaleType="centerCrop" />
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/colorCoverThree"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@drawable/change_cover_three"
+                android:padding="@dimen/dp_10"
+                android:scaleType="centerCrop" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/colorCoverFourSelected"
+                android:layout_width="51dp"
+                android:layout_height="33dp"
+                android:layout_marginRight="@dimen/dp_10"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/shadowColor">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/change_cover_four"
+                    android:padding="@dimen/dp_10"
+                    android:scaleType="centerCrop" />
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/colorCoverFour"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@drawable/change_cover_four"
+                android:padding="@dimen/dp_10"
+                android:scaleType="centerCrop" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/colorCoverFiveSelected"
+                android:layout_width="51dp"
+                android:layout_height="33dp"
+                android:layout_marginRight="@dimen/dp_10"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/shadowColor">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/change_cover_five"
+                    android:padding="@dimen/dp_10"
+                    android:scaleType="centerCrop" />
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/colorCoverFive"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="@dimen/dp_10"
+                android:background="@drawable/change_cover_five"
+                android:padding="@dimen/dp_10"
+                android:scaleType="centerCrop" />
+
+        </LinearLayout>
+
+        <com.CalSocial.widget.CalSocialButton
+            android:id="@+id/addMember"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_30"
+            android:layout_marginBottom="@dimen/dp_30"
+            app:button_text="@string/confirm_send"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/changeCoverImageLL"
+            app:layout_constraintVertical_bias="0.173" />
+
+        <com.CalSocial.widget.CalSocialButton
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_30"
+            android:layout_marginBottom="@dimen/dp_30"
+            android:visibility="invisible"
+            app:button_text="@string/confirm_send"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addMember"
+            app:layout_constraintVertical_bias="0.173" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

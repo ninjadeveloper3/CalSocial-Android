@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?><!--drawable/btn_navigation_drawer_selectorawer_selector.xml-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="false" android:state_pressed="false">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/currentDayColor" />
+            <stroke android:width="2dp" android:color="@color/currentDayColor" />
+            <corners android:radius="5dp" android:topLeftRadius="0dp" android:topRightRadius="0dp" />
+        </shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/CalSocialBlue" />
+            <stroke android:width="2dp" android:color="@color/CalSocialBlue" />
+            <corners android:radius="5dp" android:topLeftRadius="0dp" android:topRightRadius="0dp" />
+
+        </shape>
+    </item>
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/CalSocialBlue" />
+            <stroke android:width="2dp" android:color="@color/CalSocialBlue" />
+            <corners android:radius="5dp" android:topLeftRadius="0dp" android:topRightRadius="0dp" />
+
+        </shape>
+    </item>
+</selector>

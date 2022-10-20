@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EditText xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/phone_code"
+    android:layout_width="0dp"
+    android:layout_height="55dp"
+    android:layout_margin="5dp"
+    android:layout_weight="0.17"
+    android:background="@drawable/edittext_rounded_corner_border"
+    android:digits="0123456789"
+    android:fontFamily="@font/hk_grotesk_regular"
+    android:gravity="center_horizontal|center_vertical"
+    android:hint="#"
+    android:imeOptions="actionNext"
+    android:inputType="number"
+    android:maxLength="1" />

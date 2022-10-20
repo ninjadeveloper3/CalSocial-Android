@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/favorite"
+    android:layout_width="70dp"
+    android:layout_height="100dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp">
+
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/rounded_profile_card_blue"
+        android:padding="1dp"
+        android:scaleType="centerCrop"
+        android:translationX="32dp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="49dp" />
+
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/rounded_profile_card_blue"
+        android:padding="1dp"
+        android:scaleType="centerCrop"
+        android:translationY="32dp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="49dp" />
+
+
+    <ImageView
+        android:id="@+id/image3"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/rounded_profile_card_red"
+        android:padding="1dp"
+        android:scaleType="centerCrop"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="49dp" />
+
+    <ImageView
+        android:id="@+id/image4"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/rounded_profile_card_red"
+        android:padding="1dp"
+        android:scaleType="centerCrop"
+        android:translationX="32dp"
+        android:translationY="32dp"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="49dp" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/hk_grotesk_regular"
+        android:padding="@dimen/dp_10"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="@color/darkGray"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:translationY="60dp"
+        app:autoSizeTextType="uniform" />
+
+</FrameLayout>

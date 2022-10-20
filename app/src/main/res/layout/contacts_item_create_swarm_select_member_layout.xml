@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/contactsFoundItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:paddingBottom="5dp"
+    android:visibility="visible">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:padding="@dimen/dp_5"
+        android:src="@drawable/gather_swarms" />
+
+    <ImageView
+        android:id="@+id/favorite"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@id/image"
+        android:layout_marginLeft="-20dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toRightOf="@id/image"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:src="@drawable/favorite_f" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_toRightOf="@id/image"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/memberName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/hk_grotesk_regular"
+            android:text="Contact Name"
+            android:textColor="@color/dirtyBlue"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/avenir_black"
+            android:text="Test"
+            android:textColor="@color/gray"
+            android:textSize="15sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/selectGuest"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@id/image"
+        android:layout_alignBottom="@id/image"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="@dimen/dp_25"
+        android:src="@drawable/circle_selector" />
+
+    <ImageView
+        android:id="@+id/selectGuestSelected"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@id/image"
+        android:layout_alignBottom="@id/image"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="@dimen/dp_25"
+        android:paddingLeft="1dp"
+        android:paddingTop="12dp"
+        android:paddingRight="1dp"
+        android:paddingBottom="12dp"
+        android:src="@drawable/round_dot"
+        android:visibility="gone" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/favorite"
+        android:background="@color/lightGray"
+        android:layout_marginTop="5dp" />
+
+</RelativeLayout>

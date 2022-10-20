@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2017 MINDORKS NEXTGEN PRIVATE LIMITED
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://mindorks.com/license/apache-v2
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contactProfile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLine1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="0dp" />
+
+        <FrameLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideLine1">
+
+            <ImageView
+                android:id="@+id/coverImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/darkGray"
+                android:scaleType="centerCrop"
+                android:src="@drawable/cover_back_default" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent">
+
+                    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:tools="http://schemas.android.com/tools"
+                        android:id="@+id/profileImage"
+                        android:layout_width="92dp"
+                        android:layout_height="92dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="100dp">
+
+                        <ImageView
+                            android:id="@+id/image1"
+                            android:layout_width="46dp"
+                            android:layout_height="46dp"
+                            android:adjustViewBounds="true"
+                            android:background="@drawable/rounded_profile_card_blue"
+                            android:padding="1dp"
+                            android:scaleType="centerCrop"
+                            android:translationX="43dp"
+                            tools:layout_editor_absoluteX="43dp"
+                            tools:layout_editor_absoluteY="49dp" />
+
+                        <ImageView
+                            android:id="@+id/image2"
+                            android:layout_width="46dp"
+                            android:layout_height="46dp"
+                            android:background="@drawable/rounded_profile_card_blue"
+                            android:padding="1dp"
+                            android:scaleType="centerCrop"
+                            android:translationY="43dp"
+                            tools:layout_editor_absoluteX="43dp"
+                            tools:layout_editor_absoluteY="49dp" />
+
+
+                        <ImageView
+                            android:id="@+id/image3"
+                            android:layout_width="46dp"
+                            android:layout_height="46dp"
+                            android:background="@drawable/rounded_profile_card_red"
+                            android:padding="1dp"
+                            android:scaleType="centerCrop"
+                            tools:layout_editor_absoluteX="43dp"
+                            tools:layout_editor_absoluteY="49dp" />
+
+                        <ImageView
+                            android:id="@+id/image4"
+                            android:layout_width="46dp"
+                            android:layout_height="46dp"
+                            android:background="@drawable/rounded_profile_card_red"
+                            android:padding="1dp"
+                            android:scaleType="centerCrop"
+                            android:translationX="43dp"
+                            android:translationY="43dp"
+                            tools:layout_editor_absoluteX="43dp"
+                            tools:layout_editor_absoluteY="49dp" />
+
+                    </FrameLayout>
+
+                    <ImageView
+                        android:id="@+id/favorite"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignBottom="@id/profileImage"
+                        android:layout_marginLeft="-29dp"
+                        android:layout_marginBottom="-10dp"
+                        android:layout_toRightOf="@id/profileImage"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/favorite_f" />
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/profileImage"
+                        android:layout_marginTop="30dp"
+                        android:layout_toRightOf="@id/profileImage"
+                        android:fontFamily="@font/hk_grotesk_regular"
+                        android:padding="@dimen/dp_10"
+                        android:text="Swarm Name"
+                        android:textAlignment="center"
+                        android:textColor="@color/dirtyBlue"
+                        android:textSize="20sp"
+                        app:autoSizeTextType="uniform" />
+
+                    <ImageView
+                        android:id="@+id/message"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignTop="@id/name"
+                        android:layout_alignBottom="@id/name"
+                        android:layout_marginRight="-10dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_toLeftOf="@id/newEvent"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/messages" />
+
+                    <ImageView
+                        android:id="@+id/newEvent"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignTop="@id/message"
+                        android:layout_alignBottom="@id/message"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="0dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/add_event_to_cal" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/aboutUsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="@dimen/dp_10"
+            android:fontFamily="@font/hk_grotesk_regular"
+            android:padding="@dimen/dp_5"
+            android:text="@string/about_us_title"
+            android:textAlignment="textStart"
+            android:textColor="@color/darkGray"
+            android:textSize="20sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.047"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header" />
+
+        <TextView
+            android:id="@+id/aboutUsDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:fontFamily="@font/avenir_book"
+            android:padding="@dimen/dp_5"
+            android:text="@string/bio_description_placeholder"
+            android:textColor="@color/gray"
+            android:textSize="14sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.047"
+            app:layout_constraintStart_toStartOf="@id/aboutUsTitle"
+            app:layout_constraintTop_toBottomOf="@+id/aboutUsTitle" />
+
+        <RelativeLayout
+            android:id="@+id/membersListTitleRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/aboutUsTitle"
+            app:layout_constraintTop_toBottomOf="@+id/aboutUsDescription">
+
+            <TextView
+                android:id="@+id/membersListTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/hk_grotesk_regular"
+                android:padding="@dimen/dp_5"
+                android:text="X Members"
+                android:textAlignment="center"
+                android:textColor="@color/darkGray"
+                android:textSize="20sp"
+                app:autoSizeTextType="uniform" />
+
+            <ImageView
+                android:id="@+id/expandMembersView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/dp_30"
+                android:background="@drawable/calender_sync_selector"
+                android:padding="@dimen/dp_5"
+                android:src="@drawable/down_arrow_black"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/contractMembersView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/dp_30"
+                android:background="@drawable/calender_sync_selector"
+                android:padding="@dimen/dp_5"
+                android:src="@drawable/up_arrow_black"
+                android:visibility="visible" />
+
+
+        </RelativeLayout>
+
+        <net.cachapa.expandablelayout.ExpandableLayout
+            android:id="@+id/membersListExpandableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            app:el_duration="1000"
+            app:el_expanded="false"
+            app:el_parallax="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/membersListTitleRV"
+            app:layout_constraintTop_toBottomOf="@+id/membersListTitleRV">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/membersRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:orientation="vertical" />
+
+        </net.cachapa.expandablelayout.ExpandableLayout>
+
+        <RelativeLayout
+            android:id="@+id/eventsScheduledListTitleRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/membersListTitleRV"
+            app:layout_constraintTop_toBottomOf="@+id/membersListExpandableLayout">
+
+            <TextView
+                android:id="@+id/eventsScheduledListTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/hk_grotesk_regular"
+                android:padding="@dimen/dp_5"
+                android:text="X Events Scheduled"
+                android:textColor="@color/darkGray"
+                android:textSize="20sp"
+                app:autoSizeTextType="uniform" />
+
+            <ImageView
+                android:id="@+id/expandEventsView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/dp_30"
+                android:background="@drawable/calender_sync_selector"
+                android:padding="@dimen/dp_5"
+                android:src="@drawable/down_arrow_black"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/contractEventsView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/dp_30"
+                android:background="@drawable/calender_sync_selector"
+                android:padding="@dimen/dp_5"
+                android:src="@drawable/up_arrow_black"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+
+        <net.cachapa.expandablelayout.ExpandableLayout
+            android:id="@+id/eventsScheduledListExpandableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            app:el_duration="1000"
+            app:el_expanded="false"
+            app:el_parallax="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/eventsScheduledListTitleRV"
+            app:layout_constraintTop_toBottomOf="@+id/eventsScheduledListTitleRV">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/eventsRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:orientation="vertical" />
+
+        </net.cachapa.expandablelayout.ExpandableLayout>
+
+
+        <com.CalSocial.widget.CalSocialButton
+            android:id="@+id/placeHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:visibility="invisible"
+            app:button_text="@string/continue_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eventsScheduledListExpandableLayout"
+            app:layout_constraintVertical_bias="0.173" />
+
+        <com.CalSocial.widget.CalSocialButton
+            android:id="@+id/placeHolder1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:visibility="invisible"
+            app:button_text="@string/continue_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/placeHolder"
+            app:layout_constraintVertical_bias="0.173" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

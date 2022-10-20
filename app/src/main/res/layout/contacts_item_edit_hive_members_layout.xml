@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/contactsFoundItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp">
+
+    <ImageView
+        android:id="@+id/favorite"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@id/image"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:src="@drawable/favorite_f"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/unfavorite"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@id/image"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/transparent"
+        android:scaleType="centerInside"
+        android:src="@drawable/unfavorite_f"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/favorite"
+        android:background="@color/transparent"
+        android:padding="@dimen/dp_5"
+        android:src="@drawable/gather_swarms" />
+
+
+    <TextView
+        android:id="@+id/memberName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/image"
+        android:layout_alignBottom="@id/image"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_toRightOf="@id/image"
+        android:fontFamily="@font/hk_grotesk_regular"
+        android:gravity="center_vertical"
+        android:text="Contact Name"
+        android:textColor="@color/dirtyBlue"
+        android:textSize="16sp" />
+
+
+    <ImageView
+        android:id="@+id/removeGuest"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignTop="@id/image"
+        android:layout_alignBottom="@id/image"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/dp_15"
+        android:background="@drawable/round_red_dot"
+        android:paddingLeft="@dimen/dp_5"
+        android:paddingRight="@dimen/dp_5"
+        android:src="@drawable/remove_x_white" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/lightGray" />
+
+</RelativeLayout>

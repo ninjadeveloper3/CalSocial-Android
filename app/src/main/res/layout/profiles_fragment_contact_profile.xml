@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2017 MINDORKS NEXTGEN PRIVATE LIMITED
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://mindorks.com/license/apache-v2
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/contactProfile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLine1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="0dp" />
+
+        <FrameLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideLine1">
+
+            <ImageView
+                android:id="@+id/coverImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/darkGray"
+                android:scaleType="centerCrop"
+                android:src="@drawable/cover_back_default" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent">
+
+                    <ImageView
+                        android:id="@+id/profileImage"
+                        android:layout_width="88dp"
+                        android:layout_height="88dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="100dp"
+                        android:background="@drawable/rounded_profile_card_blue"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/gather_swarms" />
+
+                    <ImageView
+                        android:id="@+id/favorite"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignBottom="@id/profileImage"
+                        android:layout_marginLeft="-25dp"
+                        android:layout_marginBottom="-10dp"
+                        android:layout_toRightOf="@id/profileImage"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/favorite_f" />
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/location"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginBottom="@dimen/dp_20"
+                        android:layout_toRightOf="@id/profileImage"
+                        android:text="Their First Last"
+                        android:fontFamily="@font/hk_grotesk_regular"
+                        android:textAlignment="center"
+                        android:textColor="@color/dirtyBlue"
+                        android:textSize="20sp"
+                        app:autoSizeTextType="uniform" />
+
+                    <TextView
+                        android:id="@+id/location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@id/name"
+                        android:layout_alignBottom="@id/profileImage"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:text="City, State"
+                        android:fontFamily="@font/hk_grotesk_light"
+                        android:textAlignment="center"
+                        android:textColor="@color/dirtyBlue"
+                        android:textSize="16sp"
+                        app:autoSizeTextType="uniform" />
+
+                    <ImageView
+                        android:id="@+id/message"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignTop="@id/name"
+                        android:layout_alignBottom="@id/name"
+                        android:layout_marginRight="-10dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_toLeftOf="@id/newEvent"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/messages" />
+
+                    <ImageView
+                        android:id="@+id/newEvent"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignTop="@id/message"
+                        android:layout_alignBottom="@id/message"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="0dp"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/add_event_to_cal" />
+
+                </RelativeLayout>
+
+                <com.CalSocial.widget.CalSocialButton
+                    android:id="@+id/inHive"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="40dp"
+                    android:visibility="visible"
+                    app:button_text="@string/in_hive"
+                    app:button_type="yellow_selector" />
+
+                <com.CalSocial.widget.CalSocialButton
+                    android:id="@+id/addToHive"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="40dp"
+                    android:visibility="visible"
+                    app:button_text="@string/add_to_hive"
+                    app:button_text_size="16"
+                    app:button_type="yellow_selector" />
+
+                <com.CalSocial.widget.CalSocialButton
+                    android:id="@+id/requestSent"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="40dp"
+                    android:visibility="gone"
+                    app:button_text="@string/request_sent"
+                    app:button_type="light_green_selector" />
+
+                <LinearLayout
+                    android:id="@+id/acceptDecline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="40dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <com.CalSocial.widget.CalSocialButton
+                        android:id="@+id/accept"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        app:button_text="@string/accept"
+                        app:button_type="dark_green_selector" />
+
+                    <com.CalSocial.widget.CalSocialButton
+                        android:id="@+id/decline"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        app:button_text="@string/decline"
+                        app:button_type="light_green_selector" />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/bioTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="@dimen/dp_10"
+            android:lineSpacingExtra="4sp"
+            android:padding="@dimen/dp_5"
+            android:fontFamily="@font/hk_grotesk_regular"
+            android:text="@string/bio"
+            android:textAlignment="textStart"
+            android:textColor="@color/darkGray"
+            android:textSize="20sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.047"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header" />
+
+        <TextView
+            android:id="@+id/bioDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="@dimen/dp_10"
+            android:padding="@dimen/dp_5"
+            android:text="@string/bio_description_placeholder"
+            android:textColor="@color/gray"
+            android:textSize="14sp"
+            app:autoSizeTextType="uniform"
+            android:fontFamily="@font/avenir_book"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.047"
+            app:layout_constraintStart_toStartOf="@id/bioTitle"
+            app:layout_constraintTop_toBottomOf="@+id/bioTitle" />
+
+
+        <TextView
+            android:id="@+id/bucketListTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:padding="@dimen/dp_5"
+            android:text="@string/bucket_list_title"
+            android:textAlignment="textStart"
+            android:textColor="@color/darkGray"
+            android:textSize="20sp"
+            android:visibility="gone"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/bioTitle"
+            app:layout_constraintTop_toBottomOf="@+id/bioDescription" />
+
+        <LinearLayout
+            android:id="@+id/bucketListItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/calender_sync_selector"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bucketListTitle">
+
+
+            <LinearLayout
+                android:id="@+id/bucketItemOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_5"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/round_dot" />
+
+                <TextView
+                    android:id="@+id/bucketItemOneText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/hiveImage"
+                    android:text="This is where the swarm can write"
+                    android:textColor="@color/darkGray"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bucketItemTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_5"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/round_dot" />
+
+                <TextView
+                    android:id="@+id/bucketItemTwoText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/hiveImage"
+                    android:text="This is where the swarm can write"
+                    android:textColor="@color/darkGray"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bucketItemThree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_5"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/round_dot" />
+
+                <TextView
+                    android:id="@+id/bucketItemThreeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/hiveImage"
+                    android:text="This is where the swarm can write"
+                    android:textColor="@color/darkGray"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bucketItemFour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_5"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/round_dot" />
+
+                <TextView
+                    android:id="@+id/bucketItemFourText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/hiveImage"
+                    android:text="This is where the swarm can write"
+                    android:textColor="@color/darkGray"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/bucketItemFive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_40"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_5"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/round_dot" />
+
+                <TextView
+                    android:id="@+id/bucketItemFiveText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/hiveImage"
+                    android:text="This is where the swarm can write"
+                    android:textColor="@color/darkGray"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/eventsScheduled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:text="X Events Scheduled with FirstName"
+            android:textColor="@color/darkGray"
+            android:textSize="20sp"
+            app:autoSizeTextType="uniform"
+            android:fontFamily="@font/hk_grotesk_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.047"
+            app:layout_constraintStart_toStartOf="@id/bucketListTitle"
+            app:layout_constraintTop_toBottomOf="@+id/bucketListItems" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/eventsRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventsScheduled" />
+
+
+        <LinearLayout
+            android:id="@+id/viewHive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/calender_sync_selector"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/eventsRV">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/lightGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_15">
+
+                <ImageView
+                    android:id="@+id/hiveImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_25"
+                    android:src="@drawable/hive" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@id/hiveImage"
+                    android:text="View John's Hive"
+                    android:fontFamily="@font/hk_grotesk_regular"
+                    android:textColor="@color/darkGray"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_25"
+                    android:src="@drawable/settings_right" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/lightGray" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/viewHive1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/calender_sync_selector"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@+id/viewHive">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/lightGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_15">
+
+                <ImageView
+                    android:id="@+id/hiveImage1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_25"
+                    android:src="@drawable/hive" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@id/hiveImage1"
+                    android:text="View John's Hive"
+                    android:fontFamily="@font/hk_grotesk_regular"
+                    android:textColor="@color/darkGray"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_25"
+                    android:src="@drawable/settings_right" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/lightGray" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/viewHive2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/calender_sync_selector"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@+id/viewHive1">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/lightGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_15">
+
+                <ImageView
+                    android:id="@+id/hiveImage2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_25"
+                    android:src="@drawable/hive" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@id/hiveImage2"
+                    android:text="View John's Hive"
+                    android:fontFamily="@font/hk_grotesk_regular"
+                    android:textColor="@color/darkGray"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_25"
+                    android:src="@drawable/settings_right" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/lightGray" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

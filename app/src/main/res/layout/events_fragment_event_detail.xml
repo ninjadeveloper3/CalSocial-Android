@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2017 MINDORKS NEXTGEN PRIVATE LIMITED
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://mindorks.com/license/apache-v2
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License
+  -->
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/contactProfile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLine1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="0dp" />
+
+        <net.cachapa.expandablelayout.ExpandableLayout
+            android:id="@+id/bodyExpandableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_duration="1000"
+            app:el_expanded="true"
+            app:el_parallax="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideLine1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/bodyExpandableLayoutGuideLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="0dp" />
+
+                <FrameLayout
+                    android:id="@+id/header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bodyExpandableLayoutGuideLine">
+
+                    <ImageView
+                        android:id="@+id/coverImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/dirtyBlue"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/cover_back_default" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/attendeesRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="85dp"
+                        android:orientation="horizontal" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/eventTitleRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/header">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.6"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/eventTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_5"
+                            android:text="Alex's Great Get-Together"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/darkGray"
+                            android:fontFamily="@font/avenir_heavy"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:autoSizeTextType="uniform" />
+
+                        <TextView
+                            android:id="@+id/eventDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@id/eventTitle"
+                            android:padding="@dimen/dp_5"
+                            android:text="Saturday, June 29th 6:00pm-7:30pm"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/darkGray"
+                            android:fontFamily="@font/hk_grotesk_regular"
+                            android:textSize="16sp"
+                            app:autoSizeTextType="uniform" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center_vertical"
+                                android:padding="1dp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/map_marker" />
+
+                            <TextView
+                                android:id="@+id/location"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:padding="@dimen/dp_5"
+                                android:fontFamily="@font/hk_grotesk_regular"
+                                android:text="2928 Westway Drive, Sacramento, CA"
+                                android:textColor="@color/darkGray"
+                                android:textSize="12sp"
+                                app:autoSizeTextType="uniform" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <com.CalSocial.widget.CalSocialButton
+                        android:id="@+id/addToHive"
+                        android:layout_width="0dp"
+                        android:layout_height="66dp"
+                        android:layout_weight="0.4"
+                        android:visibility="visible"
+                        app:button_text="@string/available"
+                        app:button_text_size="12"
+                        app:button_type="lighter_green_selector" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/hostNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:padding="@dimen/dp_5"
+                    android:text="@string/host_notes_title"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/darkGray"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/hk_grotesk_regular"
+                    app:autoSizeTextType="uniform"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.047"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/eventTitleRV" />
+
+                <LinearLayout
+                    android:id="@+id/hostNotesLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hostNotes">
+
+                    <ImageView
+                        android:id="@+id/hostProfileImage"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/rounded_profile_card_red"
+                        android:padding="1dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/profile_pic" />
+
+                    <TextView
+                        android:id="@+id/aboutUsDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/message_hint"
+                        android:paddingLeft="@dimen/dp_15"
+                        android:text="@string/bio_description_placeholder"
+                        android:textColor="@color/gray"
+                        android:fontFamily="@font/avenir_book"
+                        android:textSize="20sp"
+                        app:autoSizeTextType="uniform" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/eventStatsLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hostNotesLL">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.25"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/invitedNum"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_5"
+                            android:text="1"
+                            android:textAlignment="center"
+                            android:textColor="@color/darkGray"
+                            android:fontFamily="@font/avenir_medium"
+                            android:textSize="16sp"
+                            app:autoSizeTextType="uniform" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_5"
+                            android:text="@string/invited"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/avenir_medium"
+                            android:textColor="@color/darkGray"
+                            android:textSize="16sp"
+                            app:autoSizeTextType="uniform" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.25"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/goingNum"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_5"
+                            android:text="1"
+                            android:fontFamily="@font/avenir_medium"
+                            android:textAlignment="center"
+                            android:textColor="@color/darkGray"
+                            android:textSize="16sp"
+                            app:autoSizeTextType="uniform" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_5"
+                            android:text="@string/going"
+                            android:fontFamily="@font/avenir_medium"
+                            android:textAlignment="center"
+                            android:textColor="@color/darkGray"
+                            android:textSize="16sp"
+                            app:autoSizeTextType="uniform" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.25"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/maybeNum"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_5"
+                            android:text="1"
+                            android:textAlignment="center"
+                            android:textColor="@color/darkGray"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/avenir_medium"
+                            app:autoSizeTextType="uniform" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_5"
+                            android:text="@string/maybe"
+                            android:textAlignment="center"
+                            android:textColor="@color/darkGray"
+                            android:fontFamily="@font/avenir_medium"
+                            android:textSize="16sp"
+                            app:autoSizeTextType="uniform" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.25"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/notGoingNum"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_5"
+                            android:text="1"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/avenir_medium"
+                            android:textColor="@color/darkGray"
+                            android:textSize="16sp"
+                            app:autoSizeTextType="uniform" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_5"
+                            android:text="@string/not_going"
+                            android:textAlignment="center"
+                            android:fontFamily="@font/avenir_medium"
+                            android:textColor="@color/darkGray"
+                            android:textSize="16sp"
+                            app:autoSizeTextType="uniform" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </net.cachapa.expandablelayout.ExpandableLayout>
+
+        <RelativeLayout
+            android:id="@+id/commentsTitleRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bodyExpandableLayout">
+
+            <TextView
+                android:id="@+id/commentsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:padding="@dimen/dp_5"
+                android:text="@string/comments_title"
+                android:textAlignment="textStart"
+                android:textColor="@color/darkGray"
+                android:textSize="20sp"
+                android:fontFamily="@font/hk_grotesk_regular"
+                app:autoSizeTextType="uniform" />
+
+            <ImageView
+                android:id="@+id/expandCommentsView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/dp_30"
+                android:background="@drawable/calender_sync_selector"
+                android:padding="@dimen/dp_5"
+                android:src="@drawable/down_arrow_black" />
+
+            <ImageView
+                android:id="@+id/contractCommentsView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/dp_30"
+                android:background="@drawable/calender_sync_selector"
+                android:padding="@dimen/dp_5"
+                android:src="@drawable/up_arrow_black"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/commentDivider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@color/lightGray"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/commentsTitleRV" />
+
+        <net.cachapa.expandablelayout.ExpandableLayout
+            android:id="@+id/commentsExpandableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:el_duration="1000"
+            app:el_expanded="true"
+            app:el_parallax="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/commentDivider">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/commentsExpandableLayoutGuideLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="0dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/commentsRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/commentsExpandableLayoutGuideLine" />
+
+                <LinearLayout
+                    android:id="@+id/commentSendLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingBottom="@dimen/dp_20"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/commentsRV">
+
+                    <ImageView
+                        android:id="@+id/cameraSelect"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="0.1"
+                        android:background="@color/transparent"
+                        android:src="@drawable/camera" />
+
+                    <EditText
+                        android:id="@+id/message"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:layout_weight="0.8"
+                        android:background="@drawable/edittext_rounded_corner_border_message"
+                        android:hint="@string/message_hint"
+                        android:paddingLeft="@dimen/dp_20"
+                        android:textColor="@color/messageHint"
+                        android:textColorHint="@color/messageHint"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/sendComment"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="0.1"
+                        android:background="@drawable/round_gray_dot"
+                        android:padding="1dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_arrow_up_grey600_48dp" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </net.cachapa.expandablelayout.ExpandableLayout>
+
+
+        <LinearLayout
+            android:id="@+id/commentSendLL1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_10"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/dp_20"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/commentsExpandableLayout">
+
+            <ImageView
+                android:id="@+id/cameraSelect1"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="0.1"
+                android:background="@color/transparent"
+                android:src="@drawable/camera" />
+
+            <EditText
+                android:id="@+id/message1"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_weight="0.8"
+                android:background="@drawable/edittext_rounded_corner_border_message"
+                android:hint="@string/message_hint"
+                android:paddingLeft="@dimen/dp_20"
+                android:textColor="@color/messageHint"
+                android:textColorHint="@color/messageHint"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/sendComment1"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="0.1"
+                android:background="@drawable/round_gray_dot"
+                android:padding="1dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_arrow_up_grey600_48dp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
